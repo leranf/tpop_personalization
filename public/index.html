@@ -15,14 +15,33 @@
       <script src="libs/angular-route/angular-route.min.js"></script>
 
       <!-- ANGULAR CUSTOM -->
-      <script src="js/controllers/MainCtrl.js"></script>
-      <script src="js/controllers/NerdCtrl.js"></script>
-      <script src="js/services/NerdService.js"></script>
+      <script src="js/controllers/AccessoriesCtrl.js"></script>
+      <script src="js/controllers/OverviewCtrl.js"></script>
+      <script src="js/controllers/PhoneCtrl.js"></script>
+      <script src="js/controllers/PlanCtrl.js"></script>
+      <script src="js/services/AccessoriesService.js"></script>
+      <script src="js/services/OverviewService.js"></script>
+      <script src="js/services/PhoneService.js"></script>
+      <script src="js/services/PlanService.js"></script>
       <script src="js/appRoutes.js"></script>
       <script src="js/app.js"></script>
   </head>
   <body ng-app="sampleApp">
     <div class="container">
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <th>TYPE OF POP</th>
+                <th>CUSTOMER'S NAME</th>
+                <th>PLAN</th>
+                <th>PHONE</th>
+                <th>DETAILS</th>
+              </tr>
+            </table>
+          </div>
+        </nav>
 
         <!-- ANGULAR DYNAMIC CONTENT -->
         <div ng-view></div>
