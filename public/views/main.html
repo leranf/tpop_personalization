@@ -1,47 +1,46 @@
-<div>
+<div ng-show="ready">
   <form name="plan">
     <label for="plan"> SELECT PLAN: </label>
     <select ng-model="selectedPlan">
-      <option ng-repeat="plan in plans">{{plan}}</option>
+      <option ng-repeat="plan in plans" value={{plan}}>{{plan.name}}</option>
     </select>
   </form>
   
   <form name="planDetails">
     <label for="plan"> SELECT PLAN DETAILS: </label>
     <select ng-model="selectedPlanDetails">
-      <option ng-repeat="detail in details">{{detail}}</option>
+      <option ng-repeat="detail in details" value={{detail}}>{{detail.name}}</option>
     </select>
   </form>
   
   <form name="phone">
     <label for="phone"> SELECT PHONE: </label>
     <select ng-model="selectedPhone">
-      <option ng-repeat="phone in phones">{{phone}}</option>
+      <option ng-repeat="phone in phones" value={{phone}}>{{phone.name}}</option>
     </select>
   </form>
   
   <form name="accessory_1">
     <label for="accessory_1"> SELECT 1st ACCESSORY: </label>
     <select ng-model="firstSelectedAccessory">
-      <option ng-repeat="accessory in accessories">{{accessory}}</option>
+      <option ng-repeat="accessory in accessories" value={{accessory}}>{{accessory.name}}</option>
     </select>
   </form>
 
   <form name="accessory_2">
     <label for="accessory_2"> SELECT 2nd ACCESSORY: </label>
     <select ng-model="secondSelectedAccessory">
-      <option ng-repeat="accessory in accessories">{{accessory}}</option>
+      <option ng-repeat="accessory in accessories" value={{accessory}}>{{accessory.name}}</option>
     </select>
   </form>
 
   <form name="accessory_3">
     <label for="accessory_3"> SELECT 3rd ACCESSORY: </label>
     <select ng-model="thirdSelectedAccessory">
-      <option ng-repeat="accessory in accessories">{{accessory}}</option>
+      <option ng-repeat="accessory in accessories" value={{accessory}}>{{accessory.name}}</option>
     </select>
   </form>
 
   <button ng-click='createWrap()'>Create</button>
-
 
 </div>
