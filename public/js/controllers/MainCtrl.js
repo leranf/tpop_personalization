@@ -21,17 +21,18 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, Mai
       });
     });
   });
-
+  
+  $scope.selections = {};
   $scope.createWrap = function() {
     $scope.wrapCreated = false;
     var personalizationInfo = {
       draftWrap: draftWrapForPersonalization,
-      selectedHomePage: JSON.parse($scope.selectedHomePage),
-      selectedCoversationPage: JSON.parse($scope.selectedCoversationPage),
-      selectedPhone: JSON.parse($scope.selectedPhone),
-      selectedPlan: JSON.parse($scope.selectedPlan),
-      selectedAccessory: JSON.parse($scope.selectedAccessory),
-      selectedContactPage: JSON.parse($scope.selectedContactPage)
+      selectedHomePage: $scope.selections.selectedHomePage,
+      selectedCoversationPage: $scope.selections.selectedCoversationPage,
+      selectedPhone: $scope.selections.selectedPhone,
+      selectedPlan: $scope.selections.selectedPlan,
+      selectedAccessory: $scope.selections.selectedAccessory,
+      selectedContactPage: $scope.selections.selectedContactPage
     };
 
     Main.createWrap(personalizationInfo).then(function(wrap) {

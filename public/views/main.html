@@ -1,45 +1,81 @@
 <div ng-show="ready">
-  <form name="homePage">
-    <label for="homePage"> SELECT HOME PAGE: </label>
-    <select ng-model="selectedHomePage">
-      <option ng-repeat="homePage in homePages" value={{homePage}}>{{homePage.name}}</option>
-    </select>
-  </form>
+    <label>SELECT HOME PAGE</label>
+    <table>
+      <tr>
+        <td ng-repeat="homePage in homePages">
+          <img ng-click="selections.selectedHomePage = homePage" ng-src="https:{{homePage.preview.small}}">
+        </td>
+      </tr>
+    </table>
+    
+    <label>SELECT CONVERSATION PAGE</label>
+    <table>
+      <tr>
+        <td ng-repeat="coversationPage in continueConversationPages">
+          <img ng-click="selections.selectedCoversationPage = coversationPage" ng-src="https:{{coversationPage.preview.small}}">
+        </td>
+      </tr>
+    </table>
 
-  <form name="coversationPage">
-    <label for="coversationPage"> SELECT CONVERSATION PAGE: </label>
-    <select ng-model="selectedCoversationPage">
-      <option ng-repeat="coversationPage in keepConversationGoingPages" value={{coversationPage}}>{{coversationPage.name}}</option>
-    </select>
-  </form>
+    <label>SELECT DEVICE</label>
+    <table>
+      <tr>
+        <td ng-repeat="phone in phones">
+          <img ng-click="selections.selectedPhone = phone" ng-src="https:{{phone.preview.small}}">
+        </td>
+      </tr>
+    </table>
+    
+    <label>SELECT PLAN</label>
+    <table>
+      <tr>
+        <td ng-repeat="plan in plans">
+          <img ng-click="selections.selectedPlan = plan" ng-src="https:{{plan.preview.small}}">
+        </td>
+      </tr>
+    </table>
+    
+    <label>SELECT ACCESSORY PACKAGE</label>
+    <table>
+      <tr>
+        <td ng-repeat="accessory in accessories">
+          <img ng-click="selections.selectedAccessory = accessory" ng-src="https:{{accessory.preview.small}}">
+        </td>
+      </tr>
+    </table>
+    
+    <label>SELECT CONTACT PAGE</label>
+    <table>
+      <tr>
+        <td ng-repeat="contactPage in contactPages">
+          <img ng-click="selections.selectedContactPage = contactPage" ng-src="https:{{contactPage.preview.small}}">
+        </td>
+      </tr>
+    </table>
 
-  <form name="phone">
-    <label for="phone"> SELECT PHONE: </label>
-    <select ng-model="selectedPhone">
-      <option ng-repeat="phone in phones" value={{phone}}>{{phone.name}}</option>
-    </select>
-  </form>
-
-  <form name="plan">
-    <label for="plan"> SELECT PLAN: </label>
-    <select ng-model="selectedPlan">
-      <option ng-repeat="plan in plans" value={{plan}}>{{plan.name}}</option>
-    </select>
-  </form>
-  
-  <form name="accessory">
-    <label for="accessory"> SELECT ACCESSORY PACKAGE: </label>
-    <select ng-model="selectedAccessory">
-      <option ng-repeat="accessory in accessories" value={{accessory}}>{{accessory.name}}</option>
-    </select>
-  </form>
-
-  <form name="contactPage">
-    <label for="contactPage"> SELECT CONTACT PAGE: </label>
-    <select ng-model="selectedContactPage">
-      <option ng-repeat="contactPage in contactPages" value={{contactPage}}>{{contactPage.name}}</option>
-    </select>
-  </form>
+    <label>WRAP PREVIEW</label>
+    <table>
+      <tr>
+        <td>
+          <img ng-src="https:{{selections.selectedHomePage.preview.small}}">
+        </td>
+        <td>
+          <img ng-src="https:{{selections.selectedCoversationPage.preview.small}}">
+        </td>
+        <td>
+          <img ng-src="https:{{selections.selectedPhone.preview.small}}">
+        </td>  
+        <td>
+          <img ng-src="https:{{selections.selectedPlan.preview.small}}">
+        </td>  
+        <td>
+          <img ng-src="https:{{selections.selectedAccessory.preview.small}}">
+        </td>  
+        <td>
+          <img ng-src="https:{{selections.selectedContactPage.preview.small}}">
+        </td>  
+      </tr>
+    </table>
 
   <button ng-click='createWrap()'>Create</button>
 
