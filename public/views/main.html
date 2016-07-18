@@ -1,4 +1,25 @@
 <div ng-show="ready">
+  <form name="homePage">
+    <label for="homePage"> SELECT HOME PAGE: </label>
+    <select ng-model="selectedHomePage">
+      <option ng-repeat="homePage in homePages" value={{homePage}}>{{homePage.name}}</option>
+    </select>
+  </form>
+
+  <form name="coversationPage">
+    <label for="coversationPage"> SELECT CONVERSATION PAGE: </label>
+    <select ng-model="selectedCoversationPage">
+      <option ng-repeat="coversationPage in keepConversationGoingPages" value={{coversationPage}}>{{coversationPage.name}}</option>
+    </select>
+  </form>
+
+  <form name="phone">
+    <label for="phone"> SELECT PHONE: </label>
+    <select ng-model="selectedPhone">
+      <option ng-repeat="phone in phones" value={{phone}}>{{phone.name}}</option>
+    </select>
+  </form>
+
   <form name="plan">
     <label for="plan"> SELECT PLAN: </label>
     <select ng-model="selectedPlan">
@@ -6,41 +27,25 @@
     </select>
   </form>
   
-  <form name="planDetails">
-    <label for="plan"> SELECT PLAN DETAILS: </label>
-    <select ng-model="selectedPlanDetails">
-      <option ng-repeat="detail in details" value={{detail}}>{{detail.name}}</option>
-    </select>
-  </form>
-  
-  <form name="phone">
-    <label for="phone"> SELECT PHONE: </label>
-    <select ng-model="selectedPhone">
-      <option ng-repeat="phone in phones" value={{phone}}>{{phone.name}}</option>
-    </select>
-  </form>
-  
-  <form name="accessory_1">
-    <label for="accessory_1"> SELECT 1st ACCESSORY: </label>
-    <select ng-model="firstSelectedAccessory">
+  <form name="accessory">
+    <label for="accessory"> SELECT ACCESSORY PACKAGE: </label>
+    <select ng-model="selectedAccessory">
       <option ng-repeat="accessory in accessories" value={{accessory}}>{{accessory.name}}</option>
     </select>
   </form>
 
-  <form name="accessory_2">
-    <label for="accessory_2"> SELECT 2nd ACCESSORY: </label>
-    <select ng-model="secondSelectedAccessory">
-      <option ng-repeat="accessory in accessories" value={{accessory}}>{{accessory.name}}</option>
-    </select>
-  </form>
-
-  <form name="accessory_3">
-    <label for="accessory_3"> SELECT 3rd ACCESSORY: </label>
-    <select ng-model="thirdSelectedAccessory">
-      <option ng-repeat="accessory in accessories" value={{accessory}}>{{accessory.name}}</option>
+  <form name="contactPage">
+    <label for="contactPage"> SELECT CONTACT PAGE: </label>
+    <select ng-model="selectedContactPage">
+      <option ng-repeat="contactPage in contactPages" value={{contactPage}}>{{contactPage.name}}</option>
     </select>
   </form>
 
   <button ng-click='createWrap()'>Create</button>
+
+  <div ng-show="wrapCreated">
+    <h1>New Wrap Created!!</h1>
+    <a target="_blank" href="{{newPersonalizedWrap}}">Check it out here</a>
+  </div>
 
 </div>
