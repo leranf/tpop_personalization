@@ -3,7 +3,10 @@
     <table>
       <tr>
         <td ng-repeat="homePage in homePages">
-          <img class="card-thumbnail" ng-click="selections.selectedHomePage = homePage" ng-src="https:{{homePage.preview.small}}">
+          <img class="card-thumbnail"
+            ng-src="https:{{homePage.preview.small}}"
+            ng-click="selections.selectedHomePage = homePage"
+          >
         </td>
       </tr>
     </table>
@@ -12,7 +15,10 @@
     <table>
       <tr>
         <td ng-repeat="coversationPage in continueConversationPages">
-          <img class="card-thumbnail" ng-click="selections.selectedCoversationPage = coversationPage" ng-src="https:{{coversationPage.preview.small}}">
+          <img class="card-thumbnail"
+            ng-src="https:{{coversationPage.preview.small}}"
+            ng-click="selections.selectedCoversationPage = coversationPage"
+          >
         </td>
       </tr>
     </table>
@@ -20,8 +26,13 @@
     <label>SELECT DEVICE</label>
     <table>
       <tr>
-        <td ng-repeat="phone in phones" ng-show="phone.preview">
-          <img class="card-thumbnail" ng-click="selections.selectedPhone = phone" ng-src="https:{{phone.preview.small}}" ng-mouseover="phoneTooltip=true">
+        <td ng-repeat="phone in phones">
+          <img class="card-thumbnail" 
+            ng-src="https:{{phone.preview.small}}"
+            ng-click="selections.selectedPhone = phone"
+            ng-mouseover="phoneTooltip=true"
+            ng-mouseleave="phoneTooltip=false"
+          >
           <div ng-show="phoneTooltip">{{phone.name}}</div>
         </td>
       </tr>
@@ -31,7 +42,10 @@
     <table>
       <tr>
         <td ng-repeat="plan in plans">
-          <img class="card-thumbnail" ng-click="selections.selectedPlan = plan" ng-src="https:{{plan.preview.small}}">
+          <img class="card-thumbnail"
+            ng-src="https:{{plan.preview.small}}"
+            ng-click="selections.selectedPlan = plan"
+          >
         </td>
       </tr>
     </table>
@@ -40,7 +54,12 @@
     <table>
       <tr>
         <td ng-repeat="accessory in accessories">
-          <img class="card-thumbnail" ng-click="selections.selectedAccessory = accessory" ng-src="https:{{accessory.preview.small}}" ng-mouseover="accessoryTooltip=true">
+          <img class="card-thumbnail"
+            ng-src="https:{{accessory.preview.small}}"
+            ng-click="selections.selectedAccessory = accessory"
+            ng-mouseover="accessoryTooltip=true"
+            ng-mouseleave="accessoryTooltip=false"
+          >
           <div ng-show="accessoryTooltip">{{accessory.name}}</div>
         </td>
       </tr>
@@ -50,7 +69,10 @@
     <table>
       <tr>
         <td ng-repeat="contactPage in contactPages">
-          <img class="card-thumbnail" ng-click="selections.selectedContactPage = contactPage" ng-src="https:{{contactPage.preview.small}}">
+          <img class="card-thumbnail"
+            ng-src="https:{{contactPage.preview.small}}"
+            ng-click="selections.selectedContactPage = contactPage"
+          >
         </td>
       </tr>
     </table>
