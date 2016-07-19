@@ -30,10 +30,8 @@
           <img class="card-thumbnail" 
             ng-src="https:{{phone.preview.small}}"
             ng-click="selections.selectedPhone = phone"
-            ng-mouseover="phoneTooltip=true"
-            ng-mouseleave="phoneTooltip=false"
+            ng-show="phone.preview"
           >
-          <div ng-show="phoneTooltip">{{phone.name}}</div>
         </td>
       </tr>
     </table>
@@ -57,10 +55,7 @@
           <img class="card-thumbnail"
             ng-src="https:{{accessory.preview.small}}"
             ng-click="selections.selectedAccessory = accessory"
-            ng-mouseover="accessoryTooltip=true"
-            ng-mouseleave="accessoryTooltip=false"
           >
-          <div ng-show="accessoryTooltip">{{accessory.name}}</div>
         </td>
       </tr>
     </table>
