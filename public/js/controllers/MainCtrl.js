@@ -11,13 +11,15 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, Mai
       collections.forEach(function(collection, i) {
         (function(i) {
           Main.getCardsInCollection(collection.id).then(function(cards) {
-            $scope[collection.name] = cards.sort(function(a, b) {
-              if (a.name < b.name) return -1;
-              if (a.name > b.name) return 1;
-              return 0;
-            });
-            count++;
-            if (count === collections.length) {
+            $scope[collection.name] = cards;
+            if (collection.name === 'phones' || collection.name === 'accessories') {
+              $scope[collection.name].sort(function(a, b) {
+                if (a.name < b.name) return -1;
+                if (a.name > b.name) return 1;
+                return 0;
+              });
+            }
+            if (++count === collections.length) {
               $scope.ready = true;
             }
           })
