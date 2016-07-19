@@ -36,9 +36,15 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, Mai
     };
 
     Main.createWrap(personalizationInfo).then(function(wrap) {
-      $scope.wrapCreated = true;
+      var numberToSendWrapTo = $scope.areaCode + $scope.prefix + $scope.lineNumber;
       $scope.newPersonalizedWrap = wrap.canonicalUrl;
+      
+      Main.shareWrap(wrap, numberToSendWrapTo).then(function(message) {
+        $scope.wrapCreated = true;
+        $scope.newWrapMessage = message;
+      });
     });
+
   };
 
 });
