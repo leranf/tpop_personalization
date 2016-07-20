@@ -22,14 +22,6 @@ angular.module('MainService', []).factory('Main', ['$http', function($http) {
     },
 
     createWrap: function(personalizationInfo) {
-      // return $http({
-      //   method: 'POST',
-      //   url: '/api/wraps/personalize',
-      //   data: personalizationInfo
-      // }).then(function(wrap) {
-      //   return wrap.data;
-      // });  
-      
       var draftWrapId;
       var personalized_json = [];
       for (var key in personalizationInfo) {
@@ -75,7 +67,6 @@ angular.module('MainService', []).factory('Main', ['$http', function($http) {
         var formattedNumber = '(' + areaCode + ') ' + prefix + '-' + lineNumber;
         return 'Wrap sent to ' + formattedNumber + '. Check it out';
       });
-
     }
 
   }       

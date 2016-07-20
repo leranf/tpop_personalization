@@ -3,7 +3,7 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, Mai
   var draftWrapForPersonalization;
   Main.getDraftWraps().then(function(drafWraps) {
     draftWrapForPersonalization = drafWraps.filter(function(wrap) {
-      return wrap.id === 'e117e2f3-babe-48da-a071-c63cc6e80618';
+      return wrap.id === '1c3adb92-107a-4afd-aa39-731a4cf8aa6c';
     })[0];
 
     Main.getCollections().then(function(collections){
