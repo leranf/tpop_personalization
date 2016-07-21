@@ -8,26 +8,6 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             controller: 'MainController'
         });
 
-        // .when('/phones', {
-        //     templateUrl: 'views/phone.html',
-        //     controller: 'PhoneController'
-        // })
-
-        // .when('/plans', {
-        //     templateUrl: 'views/plan.html',
-        //     controller: 'PlanController'
-        // })
-
-        // .when('/accessories', {
-        //     templateUrl: 'views/accessory.html',
-        //     controller: 'AccessoriesController'
-        // })
-
-        // .when('/overview', {
-        //     templateUrl: 'views/overview.html',
-        //     controller: 'OverviewController'
-        // });
-
     $locationProvider.html5Mode(true);
 
 }]);
