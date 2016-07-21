@@ -3,7 +3,7 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, Mai
   var draftWrapForPersonalization;
   Main.getDraftWraps().then(function(drafWraps) {
     draftWrapForPersonalization = drafWraps.filter(function(wrap) {
-      return wrap.id === '1c3adb92-107a-4afd-aa39-731a4cf8aa6c';
+      return wrap.id === '79040607-3c14-40df-a740-68203a3a3190';
     })[0];
 
     Main.getCollections().then(function(collections){
@@ -35,7 +35,7 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, Mai
       draftWrap: draftWrapForPersonalization,
       selectedHomePage: $scope.selections.selectedHomePage,
       selectedCoversationPage: $scope.selections.selectedCoversationPage,
-      selectedPhone: $scope.selections.selectedPhone,
+      selectedDevice: $scope.selections.selectedDevice,
       selectedPlan: $scope.selections.selectedPlan,
       selectedAccessory: $scope.selections.selectedAccessory,
       selectedContactPage: $scope.selections.selectedContactPage
