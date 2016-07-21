@@ -26,11 +26,11 @@
     <label>SELECT DEVICE</label>
     <table>
       <tr>
-        <td ng-repeat="phone in phones">
+        <td ng-repeat="device in devices">
           <img class="card-thumbnail" 
-            ng-src="https:{{phone.preview.small}}"
-            ng-click="selections.selectedPhone = phone"
-            ng-show="phone.preview"
+            ng-src="https:{{device.preview.small}}"
+            ng-click="selections.selectedDevice = device"
+            ng-show="device.preview"
           >
         </td>
       </tr>
@@ -82,7 +82,7 @@
           <img class="card-thumbnail" ng-src="https:{{selections.selectedCoversationPage.preview.small}}">
         </td>
         <td>
-          <img class="card-thumbnail" ng-src="https:{{selections.selectedPhone.preview.small}}">
+          <img class="card-thumbnail" ng-src="https:{{selections.selectedDevice.preview.small}}">
         </td>  
         <td>
           <img class="card-thumbnail" ng-src="https:{{selections.selectedPlan.preview.small}}">
@@ -96,11 +96,11 @@
       </tr>
     </table>
   (
-  <input class="areaCode" ng-model="areaCode" placeholder="xxx">
+  <input class="areaCode" ng-model="areaCode" placeholder="xxx" maxlength="3">
   ) 
-  <input class="prefix" ng-model="prefix" placeholder="xxx">
+  <input class="prefix" ng-model="prefix" placeholder="xxx" maxlength="3">
   -
-  <input class="lineNumber" ng-model="lineNumber" placeholder="xxxx">
+  <input class="lineNumber" ng-model="lineNumber" placeholder="xxxx" maxlength="4">
   <button ng-click='createWrap()'>Create</button>
 
   <div ng-show="wrapCreated">
