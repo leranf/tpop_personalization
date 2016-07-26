@@ -3,7 +3,7 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, Mai
   var draftWrapForPersonalization;
   Main.getDraftWraps().then(function(drafWraps) {
     draftWrapForPersonalization = drafWraps.filter(function(wrap) {
-      return wrap.id === '79040607-3c14-40df-a740-68203a3a3190';
+      return wrap.id === 'ec034e8d-1bc8-47c4-a185-61ad9c8fc0cf';
     })[0];
 
     Main.getCollections().then(function(collections){
@@ -12,11 +12,15 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, Mai
         (function(i) {
           Main.getCardsInCollection(collection.id).then(function(cards) {
             $scope[collection.name] = cards;
-            if (collection.name === 'phones' || collection.name === 'accessories') {
+            if (collection.name === 'tmoDevices' || collection.name === 'tmoAccessories') {
               $scope[collection.name].sort(function(a, b) {
                 if (a.name < b.name) return -1;
                 if (a.name > b.name) return 1;
                 return 0;
+              });
+            } else if (collection.name === 'tmoPlans') {
+              $scope[collection.name].sort(function(a, b) {
+                return Math.abs(Number(a.name.slice(0, -2))) > Math.abs(Number(b.name.slice(0, -2)));
               });
             }
             if (++count === collections.length) {
