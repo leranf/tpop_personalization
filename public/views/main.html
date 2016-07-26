@@ -26,7 +26,7 @@
     <label>SELECT DEVICE</label>
     <table>
       <tr>
-        <td ng-repeat="device in devices">
+        <td ng-repeat="device in tmoDevices">
           <img class="card-thumbnail" 
             ng-src="https:{{device.preview.small}}"
             ng-click="selections.selectedDevice = device"
@@ -39,7 +39,7 @@
     <label>SELECT PLAN</label>
     <table>
       <tr>
-        <td ng-repeat="plan in plans">
+        <td ng-repeat="plan in tmoPlans">
           <img class="card-thumbnail"
             ng-src="https:{{plan.preview.small}}"
             ng-click="selections.selectedPlan = plan"
@@ -51,7 +51,7 @@
     <label>SELECT ACCESSORY PACKAGE</label>
     <table>
       <tr>
-        <td ng-repeat="accessory in accessories">
+        <td ng-repeat="accessory in tmoAccessories">
           <img class="card-thumbnail"
             ng-src="https:{{accessory.preview.small}}"
             ng-click="selections.selectedAccessory = accessory"
