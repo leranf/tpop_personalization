@@ -32,7 +32,7 @@ module.exports = {
         var cardId = req.body[key].id;
         personalized_json.push({
           id: cardId,
-          data: { d: 'd' }
+          data: { d: 'd' } // these need to be filled out even if not important to data binding attributes
         });
       }
     }
